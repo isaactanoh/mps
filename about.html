@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GVFMI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== ADD THESE NEW STYLES ===== */
+        /* Hero Section */
+        .about-hero {
+            height: 60vh;
+            background: url('images/about-bg.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,140,0,0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .verse {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        /* Belief Cards */
+        .core-beliefs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .belief-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .belief-card:hover {
+            transform: translateY(-10px);
+        }
+        .belief-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Leader Section */
+        .leadership {
+            background: #f9f9f9;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .leader-profile {
+            max-width: 1000px;
+            margin: 40px auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 60px;
+        }
+        .leader-img {
+            width: 300px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10%;
+            border: 5px solid orange;
+            object-position: top center;
+        }
+        .leader-details {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        .title {
+            color: orange;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .belief-card { padding: 30px; }
+            .leader-details { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Keep your existing header/navigation -->
+        <div class="logo-container">
+            <img src="images/logo.png" alt="GVFMI Logo" class="logo-img">
+            <div class="logo">Great Victory Forward Ministry</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="give.html">Give</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Our Story of Faith</h1>
+            <p class="verse">"Therefore, if anyone is in Christ, he is a new creation" <br>— 2 Corinthians 5:17</p>
+        </div>
+    </section>
+
+    <section class="core-beliefs">
+        <div class="belief-card">
+            <div class="belief-icon">✝</div>
+            <h3>Our Vision</h3>
+            <p>We exist to connect people to Jesus Christ, and to see people saved ,healed ,set free, discipled, equipped, empowered and serving.</p>
+        </div>
+        
+        <div class="belief-card">
+            <div class="belief-icon">🕊</div>
+            <h3>Our Mission</h3>
+            <p>Our mission is to lead people to become fully devoted followers of Christ, and again help people to find God,grow their faith,discover their purpose and make a difference, and also lead people into a growing relationship with Jesus Christ.</p>
+        </div>
+    </section>
+
+    <section class="leadership">
+        <h2>Meet Our Leader</h2>
+        <div class="leader-profile">
+            <img src="pastor.jpg" alt="Apostle Enoch Ocansey" class="leader-img">
+            <div class="leader-details">
+                <h3>Apostle Enoch Ocansey</h3>
+                <p class="title">General Overseer</p>
+                <p>With over 20 years of ministry experience, Apostle Ocansey has dedicated his life to spreading the Gospel and nurturing believers.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Keep your existing footer -->
+        <p>&copy; 2024 Great Victory Forward Ministry International</p>
+    </footer>
+</body>
+</html>

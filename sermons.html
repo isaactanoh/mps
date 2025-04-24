@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermons - GVFMI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== MODERN SERMONS PAGE ===== */
+        :root {
+            --orange: #FF8C00;
+            --dark: #222;
+            --light: #f9f9f9;
+        }
+        
+        /* Hero Section */
+        .sermon-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('images/sermon-hero.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            margin-bottom: 60px;
+        }
+        
+        .sermon-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .sermon-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Sermon Grid */
+        .sermons-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--orange);
+        }
+        
+        .sermon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .sermon-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .sermon-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .sermon-thumbnail {
+            position: relative;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255,140,0,0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .sermon-card:hover .play-button {
+            background: var(--orange);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .sermon-details {
+            padding: 25px;
+        }
+        
+        .sermon-date {
+            color: var(--orange);
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .sermon-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .sermon-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Featured Series */
+        .series-section {
+            background: var(--light);
+            padding: 80px 20px;
+            margin: 60px 0;
+        }
+        
+        .series-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .series-image {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            background: url('images/series-thumbnail.jpg') center/cover;
+        }
+        
+        .series-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .series-title {
+            font-size: 2rem;
+            color: var(--orange);
+            margin-bottom: 20px;
+        }
+        
+        .series-description {
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .series-sermons {
+            margin-top: 30px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sermon-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .series-card {
+                flex-direction: column;
+            }
+            
+            .series-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="GVFMI Logo" class="logo-img">
+            <div class="logo">Great Victory Forward Ministry</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="give.html">Give</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sermon-hero">
+        <div>
+            <h1>Spiritual Nourishment</h1>
+            <p>Watch, listen, and grow through our biblical teachings</p>
+        </div>
+    </section>
+
+    <div class="sermons-container">
+        <div class="section-title">
+            <h2>Recent Sermons</h2>
+            <p>Be transformed by the renewing of your mind</p>
+        </div>
+        
+        <div class="sermon-grid">
+            <!-- Sermon 1 -->
+            <div class="sermon-card">
+                <div class="sermon-thumbnail" style="background-image: url('images/sermon1.jpg');">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="sermon-details">
+                    <span class="sermon-date">June 2, 2024</span>
+                    <h3 class="sermon-title">The Power of Faith</h3>
+                    <p>Exploring how genuine faith transforms lives and circumstances through Christ.</p>
+                    <div class="sermon-meta">
+                        <span><i class="fas fa-user"></i> Apostle Enoch Ocansey</span>
+                        <span><i class="fas fa-clock"></i> 45 min</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sermon 2 -->
+            <div class="sermon-card">
+                <div class="sermon-thumbnail" style="background-image: url('images/sermon2.jpg');">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="sermon-details">
+                    <span class="sermon-date">May 26, 2024</span>
+                    <h3 class="sermon-title">Walking in Victory</h3>
+                    <p>Understanding our position in Christ and how to live triumphantly daily.</p>
+                    <div class="sermon-meta">
+                        <span><i class="fas fa-user"></i> Apostle Enoch Ocansey</span>
+                        <span><i class="fas fa-clock"></i> 52 min</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sermon 3 -->
+            <div class="sermon-card">
+                <div class="sermon-thumbnail" style="background-image: url('images/sermon3.jpg');">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="sermon-details">
+                    <span class="sermon-date">May 19, 2024</span>
+                    <h3 class="sermon-title">The Love of God</h3>
+                    <p>Discovering the depth and practical implications of God's unconditional love.</p>
+                    <div class="sermon-meta">
+                        <span><i class="fas fa-user"></i> Apostle Enoch Ocansey</span>
+                        <span><i class="fas fa-clock"></i> 38 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="series-section">
+        <div class="sermons-container">
+            <div class="section-title">
+                <h2>Featured Series</h2>
+                <p>Dive deeper into God's Word</p>
+            </div>
+            
+            <div class="series-card">
+                <div class="series-image"></div>
+                <div class="series-content">
+                    <h3 class="series-title">"Victory in Christ" Series</h3>
+                    <p class="series-description">This 4-part teaching series explores what it truly means to live in the victory Jesus secured for us, covering spiritual warfare, identity in Christ, and practical Christian living.</p>
+                    <div class="series-sermons">
+                        <div class="sermon-meta">
+                            <span><i class="fas fa-list-ol"></i> 4 Messages</span>
+                            <span><i class="fas fa-calendar"></i> April 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Great Victory Forward Ministry International</p>
+    </footer>
+
+    <script>
+        // Add click functionality to sermon cards
+        document.querySelectorAll('.sermon-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Replace with actual sermon page link
+                window.location.href = 'sermon-detail.html';
+            });
+        });
+        
+        // Add click functionality to series card
+        document.querySelector('.series-card').addEventListener('click', function() {
+            // Replace with actual series page link
+            window.location.href = 'series-detail.html';
+        });
+    </script>
+</body>
+</html>

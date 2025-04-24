@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events - GVFMI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add to your existing styles.css */
+        .events-hero {
+            background: url('images/events-hero.jpg') no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .events-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        
+        .events-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .events-container {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: orange;
+            margin: 15px auto;
+        }
+        
+        .event-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .event-content {
+            padding: 25px;
+        }
+        
+        .event-date {
+            display: inline-block;
+            background: orange;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .event-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .event-detail {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            color: #555;
+        }
+        
+        .event-detail i {
+            color: orange;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .regular-services {
+            background: #f9f9f9;
+            padding: 60px 20px;
+            margin-top: 40px;
+        }
+        
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .service-card h3 {
+            color: orange;
+            margin-bottom: 15px;
+        }
+        
+        .service-time {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .announcement-banner {
+            background: orange;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="church logo.jpg" alt="GVFMI Church Logo" class="logo-img">
+            <div class="logo">Great Victory Forward Ministry</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="give.html">Give</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="events-hero">
+        <div class="events-hero-content">
+            <h1>Upcoming Events</h1>
+            <p>Join us for powerful encounters with God</p>
+        </div>
+    </section>
+
+    <div class="events-container">
+        <h2 class="section-title">Special Events</h2>
+        
+        <div class="event-cards">
+            <!-- 3 Days Revival -->
+            <div class="event-card">
+                <img src="FATHER-DONT-LET-THEM-ASK.jpg" alt="3 Days Revival">
+                <div class="event-content">
+                    <span class="event-date">MAY 21-23, 2025</span>
+                    <h3 class="event-title">3 Days Revival</h3>
+                    <div class="event-detail">
+                        <i>⏰</i> 6:30 PM Each Night
+                    </div>
+                    <div class="event-detail">
+                        <i>📍</i> Main Auditorium
+                    </div>
+                    <p>A powerful time of spiritual refreshing and renewal</p>
+                </div>
+            </div>
+            
+            <!-- 14 Days Fasting -->
+            <div class="event-card">
+                <img src="JUNE-F-AND-P.jpg" alt="14 Days Prayer & Fasting">
+                <div class="event-content">
+                    <span class="event-date">JUNE 2-15, 2025</span>
+                    <h3 class="event-title">14 Days Prayer & Fasting</h3>
+                    <div class="event-detail">
+                        <i>⏰</i> Daily Prayer Times
+                    </div>
+                    <div class="event-detail">
+                        <i>📍</i> Main Auditorium
+                    </div>
+                    <p>Seeking God's face for breakthrough and direction</p>
+                </div>
+            </div>
+            
+            <!-- 5th Anniversary -->
+            <div class="event-card">
+                <img src="5years.jpg" alt="5th Anniversary">
+                <div class="event-content">
+                    <span class="event-date">SEPTEMBER 2025</span>
+                    <h3 class="event-title">5th Year Anniversary</h3>
+                    <div class="event-detail">
+                        <i>⏰</i> Full Month Celebration
+                    </div>
+                    <div class="event-detail">
+                        <i>📍</i> Church Premises
+                    </div>
+                    <p>Celebrating 5 years of God's faithfulness</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="regular-services">
+        <div class="events-container">
+            <h2 class="section-title">Regular Services</h2>
+            
+            <div class="service-cards">
+                <!-- Sunday Morning -->
+                <div class="service-card">
+                    <h3>Sunday Service</h3>
+                    <div class="service-time">7:20 AM</div>
+                    <p>Powerful worship and word</p>
+                    <div class="event-detail">
+                        <i>📍</i> Main Auditorium
+                    </div>
+                </div>
+                
+                <!-- Fire for Fire -->
+                <div class="service-card">
+                    <h3>Fire for Fire Prayer</h3>
+                    <div class="service-time">6:30 PM</div>
+                    <p>Sunday Evening Prayer Service</p>
+                    <div class="event-detail">
+                        <i>📍</i> Main Auditorium
+                    </div>
+                </div>
+                
+                <!-- Friday Prayer -->
+                <div class="service-card">
+                    <h3>Friday Prayer</h3>
+                    <div class="service-time">6:30 PM</div>
+                    <p>Midweek spiritual refreshing</p>
+                    <div class="event-detail">
+                        <i>📍</i> Main Auditorium
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="events-container">
+        <div class="announcement-banner">
+            <h3>Mark Your Calendars!</h3>
+            <p>Don't miss these life-changing events. We're expecting a move of God!</p>
+            <a href="contact.html" class="btn btn-white">Get Directions</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Great Victory Forward Ministry International</p>
+    </footer>
+</body>
+</html>
