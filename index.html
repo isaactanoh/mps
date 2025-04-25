@@ -3,125 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Great Victory Forward Ministry</title>
+    <title>Great Victory Forward Ministry International</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ===== ADD THESE NEW STYLES ===== */
-        /* Hero Section */
+        /* Index Page Specific Styles */
         .hero {
-            height: 100vh;
-            background: url('images/hero-bg.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
+            background: linear-gradient(rgba(0, 78, 137, 0.85), rgba(0, 78, 137, 0.85)), url('images/hero-bg.jpg') center/cover no-repeat;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
+        
+        .hero-content h1 {
+            animation-delay: 0.3s;
         }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 20px;
+        
+        .hero-content p {
+            animation-delay: 0.6s;
         }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
+        
         .hero-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
+            animation-delay: 0.9s;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: orange;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-        }
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Quick Info Cards */
+        
         .quick-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 60px 20px;
-            background: white;
+            background: linear-gradient(135deg, var(--light) 0%, #f0f7ff 100%);
         }
+        
         .info-card {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            background: var(--white);
+            border-top: 4px solid var(--primary);
         }
-        .info-card:hover {
-            transform: translateY(-10px);
+        
+        .info-card:nth-child(2) {
+            border-top-color: var(--accent);
         }
-        .info-icon {
-            font-size: 2.5rem;
-            color: orange;
-            margin-bottom: 15px;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero-buttons { flex-direction: column; }
+        
+        .info-card:nth-child(3) {
+            border-top-color: var(--secondary-light);
         }
     </style>
 </head>
 <body>
-    <!-- ===== PASTE THIS NEW CONTENT ===== -->
-    <header>
-        <div class="logo-container">
-            <img src="church logo.jpg" alt="GVFMI Logo" class="logo-img">
-            <div class="logo">Great Victory Forward Ministry</div>
+    <header id="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="church logo.jpg" alt="GVFMI Logo" class="logo-img">
+                <div class="logo">Great Victory Forward Ministry</div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ministries.html">Ministries</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="give.html">Give</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="ministries.html">Ministries</a></li>
-                <li><a href="sermons.html">Sermons</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="give.html">Give</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Experience God's Victory</h1>
-            <p>Join us as we worship and grow together in Christ</p>
+            <h1>Experience God's Victory in Your Life</h1>
+            <p>Join our vibrant community as we worship, grow, and serve together in Christ</p>
+            <h6>Victory Forward! Christ our victory!!</h6>
             <div class="hero-buttons">
                 <a href="about.html" class="btn">Learn More</a>
                 <a href="events.html" class="btn btn-outline">Upcoming Events</a>
@@ -130,25 +80,117 @@
     </section>
 
     <section class="quick-info">
-        <div class="info-card">
-            <div class="info-icon">⏰</div>
-            <h3>Service Times</h3>
-            <p>Sunday: 7:20 AM<br>Friday: 6:30 PM</p>
-        </div>
-        <div class="info-card">
-            <div class="info-icon">📍</div>
-            <h3>Location</h3>
-            <p>Fetteh Mamfam<br>Accra, Ghana</p>
-        </div>
-        <div class="info-card">
-            <div class="info-icon">📞</div>
-            <h3>Contact Us</h3>
-            <p>+233 552 061 090<br>greatvictoryforward@gmail.com</p>
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Service Times</h3>
+                    <p>Sunday: 7:20 AM<br>Friday: 6:30 PM</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Location</h3>
+                    <p>Fetteh Mamfam (Victory Junction)<br>kasoa, Ghana</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>Contact Us</h3>
+                    <p>+233 552 061 090<br>greatvictoryforwardministryint@gmail.com</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Great Victory Forward Ministry International</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Great Victory Forward Ministry International is committed to spreading the Gospel and nurturing believers in their faith journey.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="ministries.html">Ministries</a>
+                    <a href="sermons.html">Sermons</a>
+                    <a href="events.html">Events</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Fetteh Mamfam, Accra, Ghana</p>
+                    <p><i class="fas fa-phone-alt"></i> +233 552 061 090</p>
+                    <p><i class="fas fa-envelope"></i> greatvictoryforwardministryint@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Great Victory Forward Ministry International. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.info-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initialize animation
+        window.addEventListener('load', () => {
+            const infoCards = document.querySelectorAll('.info-card');
+            infoCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s;
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    </script>
 </body>
 </html>

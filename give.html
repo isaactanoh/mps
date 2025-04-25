@@ -3,10 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Give</title>
+    <title>Give - GVFMI</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Add these styles to your existing styles.css or in this head section */
+        /* Give Page Specific Styles */
+        .give-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/give-hero.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            margin-top: 80px;
+        }
+        
+        .give-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .give-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: var(--font-secondary);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .give-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .give-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .give-content p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .verse {
+            font-style: italic;
+            color: var(--primary);
+            margin: 30px 0;
+            font-size: 1.2rem;
+        }
+        
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .donation-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+        
+        .donation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .donation-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .donation-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-family: var(--font-secondary);
+        }
+        
+        .donation-details {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin: 10px 0;
+            display: block;
+        }
+        
+        .copy-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 15px;
+            display: inline-block;
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+        
         .donation-modal {
             display: none;
             position: fixed;
@@ -21,139 +139,243 @@
         }
         
         .donation-content {
-            background-color: white;
-            padding: 30px;
+            background-color: var(--white);
+            padding: 40px;
             border-radius: 10px;
             max-width: 500px;
             width: 90%;
             text-align: center;
             position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
         .close-btn {
             position: absolute;
-            top: 10px;
-            right: 15px;
+            top: 15px;
+            right: 20px;
             font-size: 24px;
             cursor: pointer;
-            color: #333;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+        
+        .close-btn:hover {
+            color: var(--primary);
         }
         
         .donation-option {
             margin: 20px 0;
-            padding: 15px;
-            background-color: #f9f9f9;
+            padding: 20px;
+            background-color: var(--light);
             border-radius: 8px;
         }
         
-        .donation-option h3 {
-            color: orange;
-            margin-bottom: 10px;
-        }
-        
-        .highlight {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #333;
-        }
-        
-        .copy-btn {
-            background-color: orange;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        
-        .copy-btn:hover {
-            background-color: #e69500;
+        @media (max-width: 768px) {
+            .give-hero h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="church logo.jpg" alt="GVFMI Church Logo" class="logo-img">
-            <div class="logo">Great Victory Forward Ministry</div>
+    <header id="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="church logo.jpg" alt="GVFMI Logo" class="logo-img">
+                <div class="logo">Great Victory Forward Ministry</div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ministries.html">Ministries</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="give.html" class="active">Give</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="ministries.html">Ministries</a></li>
-                <li><a href="sermons.html">Sermons</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="give.html">Give</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="about">
-        <h2>Give Online</h2>
-        <p>Support the ministry of Great Victory Forward. Your generosity makes our mission possible.</p>
-        <a href="#" class="btn" id="donateBtn">Donate Now</a>
-        
-        <!-- Donation Modal -->
-        <div id="donationModal" class="donation-modal">
-            <div class="donation-content">
-                <span class="close-btn">&times;</span>
-                <h2>Donation Options</h2>
-                <p>Thank you for supporting Great Victory Forward Ministry International</p>
-                
-                <div class="donation-option">
-                    <h3>Mobile Money (MOMO)</h3>
-                    <p>Send to this number:</p>
-                    <p class="highlight" id="momoNumber">+233 55 206 1090</p>
-                    <button class="copy-btn" onclick="copyToClipboard('momoNumber')">Copy Number</button>
+    <section class="give-hero">
+        <div class="give-hero-content">
+            <h1>Give Generously</h1>
+            <p>Support the ministry and advance God's kingdom</p>
+        </div>
+    </section>
+
+    <section class="give-section">
+        <div class="container">
+            <div class="give-content">
+                <div class="section-title">
+                    <h2>Give Online</h2>
+                    <p>Your generosity makes our mission possible</p>
                 </div>
                 
-                <div class="donation-option">
-                    <h3>Bank Transfer</h3>
-                    <p>Account Name: <span class="highlight">Great Victory Forward Ministry International LBG</span></p>
-                    <p>Account Number: <span class="highlight" id="accountNumber">1341460000011</span></p>
-                    <button class="copy-btn" onclick="copyToClipboard('accountNumber')">Copy Account Number</button>
-                </div>
+                <p>At Great Victory Forward Ministry International, we believe in the power of giving as an act of worship and obedience to God. Your financial support enables us to spread the Gospel, support missions, and serve our community effectively.</p>
                 
-                <p>For international transfers or other donation methods, please <a href="contact.html">contact us</a>.</p>
+                <p class="verse">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."<br>— 2 Corinthians 9:7</p>
+                
+                <a href="#" class="btn" id="donateBtn">Donate Now</a>
+                
+                <div class="donation-options">
+                    <div class="donation-card">
+                        <div class="donation-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Mobile Money (MOMO)</h3>
+                        <p class="donation-details">Quick and convenient giving through mobile money</p>
+                        <span class="highlight">+233 55 206 1090</span>
+                        <button class="copy-btn" onclick="copyToClipboard('+233552061090')">Copy Number</button>
+                    </div>
+                    
+                    <div class="donation-card">
+                        <div class="donation-icon"><i class="fas fa-university"></i></div>
+                        <h3>Bank Transfer</h3>
+                        <p class="donation-details">Direct bank transfers to our ministry account</p>
+                        <span class="highlight">Great Victory Forward Ministry International LBG</span>
+                        <span class="highlight">Account: 1341460000011</span>
+                        <button class="copy-btn" onclick="copyToClipboard('1341460000011')">Copy Account</button>
+                    </div>
+                    
+                    <div class="donation-card">
+                        <div class="donation-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h3>In-Person Giving</h3>
+                        <p class="donation-details">Give during our services or at the church office</p>
+                        <span class="highlight">Sunday Services</span>
+                        <span class="highlight">Church Office Hours</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Donation Modal -->
+    <div id="donationModal" class="donation-modal">
+        <div class="donation-content">
+            <span class="close-btn">&times;</span>
+            <h2>Donation Options</h2>
+            <p>Thank you for supporting Great Victory Forward Ministry International</p>
+            
+            <div class="donation-option">
+                <h3>Mobile Money (MOMO)</h3>
+                <p>Send to this number:</p>
+                <p class="highlight" id="momoNumber">+233 55 206 1090</p>
+                <button class="copy-btn" onclick="copyToClipboard('momoNumber')">Copy Number</button>
+            </div>
+            
+            <div class="donation-option">
+                <h3>Bank Transfer</h3>
+                <p>Account Name: <span class="highlight">Great Victory Forward Ministry International LBG</span></p>
+                <p>Account Number: <span class="highlight" id="accountNumber">1341460000011</span></p>
+                <button class="copy-btn" onclick="copyToClipboard('accountNumber')">Copy Account Number</button>
+            </div>
+            
+            <p>For international transfers or other donation methods, please <a href="contact.html">contact us</a>.</p>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024 GVFMI Church. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Great Victory Forward Ministry International is committed to spreading the Gospel and nurturing believers in their faith journey.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="ministries.html">Ministries</a>
+                    <a href="sermons.html">Sermons</a>
+                    <a href="events.html">Events</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Fetteh Mamfam, kasoa, Ghana</p>
+                    <p><i class="fas fa-phone-alt"></i> +233 552 061 090</p>
+                    <p><i class="fas fa-envelope"></i> greatvictoryforwardministryint@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Great Victory Forward Ministry International. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Get the modal and button elements
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Donation Modal
         const modal = document.getElementById("donationModal");
         const btn = document.getElementById("donateBtn");
         const span = document.getElementsByClassName("close-btn")[0];
         
-        // When user clicks the button, open the modal
         btn.onclick = function(e) {
             e.preventDefault();
             modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
         }
         
-        // When user clicks on (x), close the modal
         span.onclick = function() {
             modal.style.display = "none";
+            document.body.style.overflow = "auto";
         }
         
-        // When user clicks anywhere outside the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+                document.body.style.overflow = "auto";
             }
         }
         
         // Function to copy text to clipboard
         function copyToClipboard(elementId) {
-            const element = document.getElementById(elementId);
-            const text = element.innerText;
+            let text;
+            if (typeof elementId === 'string') {
+                if (elementId.startsWith('+')) {
+                    text = elementId;
+                } else {
+                    const element = document.getElementById(elementId);
+                    text = element.innerText;
+                }
+            } else {
+                text = elementId;
+            }
             
             navigator.clipboard.writeText(text).then(() => {
                 alert("Copied to clipboard: " + text);
