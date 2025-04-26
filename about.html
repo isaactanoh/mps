@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - GVFMI</title>
+    <meta name="description" content="Learn about Great Victory Forward Ministry International - Our vision, mission, and leadership">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* About Page Specific Styles */
         .about-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/about-bg.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(45, 52, 54, 0.8), rgba(45, 52, 54, 0.8)), 
+                        url('images/about-bg.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -29,22 +33,19 @@
         }
         
         .about-hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            font-family: var(--font-secondary);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
         
         .verse {
             font-style: italic;
-            font-size: 1.2rem;
-            margin-top: 20px;
-            color: var(--white);
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .beliefs-section {
             background: var(--white);
-            padding: 80px 0;
         }
         
         .belief-cards {
@@ -58,8 +59,8 @@
         .belief-card {
             background: var(--white);
             padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
             text-align: center;
             transition: var(--transition);
             border-top: 4px solid var(--primary);
@@ -67,28 +68,25 @@
         
         .belief-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-hover);
         }
         
         .belief-icon {
             font-size: 3rem;
-            color: var(--primary);
             margin-bottom: 20px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .belief-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
-            color: var(--secondary);
-        }
-        
-        .belief-card p {
-            color: var(--gray);
         }
         
         .leadership-section {
             background: var(--light);
-            padding: 80px 0;
         }
         
         .leader-profile {
@@ -100,17 +98,13 @@
             margin: 40px auto 0;
         }
         
-        .leader-img-container {
-            position: relative;
-            text-align: center;
-        }
-        
         .leader-img {
             width: 100%;
             max-width: 350px;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            box-shadow: var(--shadow-hover);
+            margin: 0 auto;
         }
         
         .leader-details {
@@ -118,10 +112,8 @@
         }
         
         .leader-details h3 {
-            font-size: 2rem;
-            color: var(--secondary);
+            font-size: 2.2rem;
             margin-bottom: 10px;
-            font-family: var(--font-secondary);
         }
         
         .title {
@@ -131,14 +123,9 @@
             font-size: 1.2rem;
         }
         
-        .leader-details p {
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-        
         @media (max-width: 768px) {
             .about-hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .leader-details {
@@ -152,29 +139,34 @@
     </style>
 </head>
 <body>
+    <!-- ===== HEADER ===== -->
     <header id="header">
         <div class="container">
-            <div class="logo-container">
-                <img src="church logo.jpg" alt="GVFMI Logo" class="logo-img">
-                <div class="logo">Great Victory Forward Ministry</div>
+            <div class="header-inner">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="GVFMI Logo" class="logo-img">
+                    <div class="logo-text">Great Victory <span>Forward</span></div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="ministries.html">Ministries</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="give.html">Give</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="ministries.html">Ministries</a></li>
-                    <li><a href="sermons.html">Sermons</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="give.html">Give</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
+    <!-- ===== HERO SECTION ===== -->
     <section class="about-hero">
         <div class="about-hero-content">
             <h1>Our Story of Faith</h1>
@@ -182,7 +174,8 @@
         </div>
     </section>
 
-    <section class="beliefs-section">
+    <!-- ===== BELIEFS SECTION ===== -->
+    <section class="section beliefs-section">
         <div class="container">
             <div class="section-title">
                 <h2>Our Core Beliefs</h2>
@@ -211,7 +204,8 @@
         </div>
     </section>
 
-    <section class="leadership-section">
+    <!-- ===== LEADERSHIP SECTION ===== -->
+    <section class="section leadership-section">
         <div class="container">
             <div class="section-title">
                 <h2>Meet Our Leader</h2>
@@ -219,8 +213,8 @@
             </div>
             
             <div class="leader-profile">
-                <div class="leader-img-container">
-                    <img src="pastor.jpg" alt="Apostle Enoch Ocansey" class="leader-img">
+                <div>
+                    <img src="images/pastor.jpg" alt="Apostle Enoch Ocansey" class="leader-img">
                 </div>
                 <div class="leader-details">
                     <h3>Apostle Enoch Ocansey</h3>
@@ -232,40 +226,48 @@
         </div>
     </section>
 
-    <footer>
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>About Us</h3>
                     <p>Great Victory Forward Ministry International is committed to spreading the Gospel and nurturing believers in their faith journey.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com/gvfmi" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/gvfmi" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/gvfmi" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/gvfmi" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/233552061090" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
+                
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
                     <a href="ministries.html">Ministries</a>
-                    <a href="sermons.html">Sermons</a>
                     <a href="events.html">Events</a>
+                    <a href="give.html">Give</a>
+                    <a href="contact.html">Contact</a>
                 </div>
+                
                 <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Fetteh Mamfam, kasoa, Ghana</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Fetteh Mamfam, Accra, Ghana</p>
                     <p><i class="fas fa-phone-alt"></i> +233 552 061 090</p>
                     <p><i class="fas fa-envelope"></i> greatvictoryforwardministryint@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Service Times: Sun 7:20AM, Fri 6:30PM</p>
                 </div>
             </div>
+            
             <div class="copyright">
                 <p>&copy; 2024 Great Victory Forward Ministry International. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- ===== SCRIPTS ===== -->
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -275,6 +277,7 @@
             navMenu.classList.toggle('active');
             mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', navMenu.classList.contains('active'));
         });
         
         // Close menu when clicking on a link
@@ -282,6 +285,7 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
         });
         
