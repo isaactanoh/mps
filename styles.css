@@ -346,6 +346,20 @@ ul {
     transition: var(--transition);
     border-bottom: 4px solid var(--primary);
 }
+.logo-subtext {
+    color: var(--primary); 
+}
+.logo-text {
+    position: relative;
+}
+
+.logo-subtext {
+    font-size: 0.8rem; 
+    font-weight: 400; 
+    color: var(--gray);
+    margin-top: 4px; 
+    font-family: var(--font-primary);
+}
 
 .info-card:hover {
     transform: translateY(-10px);
@@ -678,6 +692,10 @@ ul {
 .footer-column a:hover {
     color: var(--primary);
     padding-left: 5px;
+}
+.footer {
+    margin-top: 80px; /* Adds space above the footer (About Us section) */
+    /* ... existing styles ... */
 }
 
 .social-links {
