@@ -1,102 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Great Victory Forward Ministry International</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Victory Forward Ministry International</title>
+    <meta name="description" content="Experience God's love at GVFMI - A vibrant Pentecostal church in Accra, Ghana">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header id="header">
-    <div class="container">
-      <div class="header-inner">
-        <div class="logo-container">
-          <img src="images/logo.png" alt="GVFMI Logo" class="logo-img">
-          <div class="logo-text">Great Victory <span>Forward</span></div>
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-container">
+                    <img src="church logo.jpg" alt="GVFMI Logo" class="logo-img">
+                    <div class="logo-text">Great Victory <span>Forward Ministry Int.</span></div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="ministries.html">Ministries</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="give.html">Give</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-          <i class="fas fa-bars"></i>
-        </button>
-        
-        <nav>
-          <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="ministries.html">Ministries</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="give.html">Give</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Experience God's Victory in Your Life</h1>
-      <p>Join our vibrant community as we worship, grow, and serve together in Christ</p>
-      <div class="hero-buttons">
-        <a href="about.html" class="btn">Learn More</a>
-        <a href="events.html" class="btn btn-outline">Upcoming Events</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Other sections would go here -->
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>About Us</h3>
-          <p>Great Victory Forward Ministry International is committed to spreading the Gospel and nurturing believers.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-          </div>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience God's Victory in Your Life</h1>
+            <p>Join our vibrant community as we worship, grow, and serve together in Christ</p>
+            <h5>Victory forward! Christ our Victory!!</h5>
+            <div class="hero-buttons">
+                <a href="about.html" class="btn">Learn More</a>
+                <a href="events.html" class="btn btn-outline">Upcoming Events</a>
+            </div>
         </div>
-        
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="ministries.html">Ministries</a>
-          <a href="events.html">Events</a>
-          <a href="give.html">Give</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Contact Info</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Fetteh Mamfam, Accra, Ghana</p>
-          <p><i class="fas fa-phone-alt"></i> +233 552 061 090</p>
-          <p><i class="fas fa-envelope"></i> greatvictoryforwardministryint@gmail.com</p>
-        </div>
-      </div>
-      
-      <div class="copyright">
-        <p>&copy; 2024 Great Victory Forward Ministry International. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
-        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    });
-  </script>
+    <!-- ===== QUICK INFO SECTION ===== -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Service Times</h3>
+                    <p>Sunday: 7:20 AM<br>Friday: 6:30 PM</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Location</h3>
+                    <p>Fetteh Mamfam (Victory Junction)<br>Accra, Ghana</p>
+                </div>
+                
+                <div class="info-card contact-info">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>Contact Us</h3>
+                    <p>+233 552 061 090<br>greatvictoryforwardministryint@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES SECTION ===== -->
+    <section class="section features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Join Us</h2>
+                <p>Discover what makes our church community special</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-praying-hands"></i></div>
+                    <h3>Powerful Worship</h3>
+                    <p>Experience the presence of God through our vibrant worship services that lift up the name of Jesus.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bible"></i></div>
+                    <h3>Biblical Teaching</h3>
+                    <p>Grow in your faith through practical, life-changing messages based on God's Word.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Loving Community</h3>
+                    <p>Connect with a family of believers who will support and encourage you in your spiritual journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EVENTS SECTION ===== -->
+    <section class="section events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Events</h2>
+                <p>Join us for these life-changing gatherings</p>
+            </div>
+            
+            <div class="event-cards">
+                <div class="event-card">
+                    <img src="FATHER-DONT-LET-THEM-ASK.jpg" alt="3 Days Revival" class="event-image">
+                    <div class="event-content">
+                        <span class="event-date">MAY 21-23, 2024</span>
+                        <h3 class="event-title">3 Days Revival</h3>
+                        <div class="event-detail">
+                            <i class="fas fa-clock"></i> 6:30 PM Each Night
+                        </div>
+                        <div class="event-detail">
+                            <i class="fas fa-map-marker-alt"></i> Main Auditorium
+                        </div>
+                        <p>A powerful time of spiritual refreshing with special guest ministers.</p>
+                        <a href="events.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <img src="JUNE-F-AND-P.jpg" alt="14 Days Prayer & Fasting" class="event-image">
+                    <div class="event-content">
+                        <span class="event-date">JUNE 2-15, 2024</span>
+                        <h3 class="event-title">14 Days Prayer & Fasting</h3>
+                        <div class="event-detail">
+                            <i class="fas fa-clock"></i> Daily Prayer Times
+                        </div>
+                        <div class="event-detail">
+                            <i class="fas fa-map-marker-alt"></i> Main Auditorium
+                        </div>
+                        <p>Seeking God's face for breakthrough in our personal lives and nation.</p>
+                        <a href="events.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <img src="anniversary.jpg" alt="5th Anniversary" class="event-image">
+                    <div class="event-content">
+                        <span class="event-date">SEPTEMBER 5-30, 2024</span>
+                        <h3 class="event-title">5th Year Anniversary</h3>
+                        <div class="event-detail">
+                            <i class="fas fa-clock"></i> Full Month Celebration
+                        </div>
+                        <div class="event-detail">
+                            <i class="fas fa-map-marker-alt"></i> Church Premises
+                        </div>
+                        <p>Celebrating 5 years of God's faithfulness with special services and outreach.</p>
+                        <a href="events.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Visit Us?</h2>
+            <p>We'd love to welcome you to our next service. Come as you are and experience God's love.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn">Get Directions</a>
+                <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Great Victory Forward Ministry International is committed to spreading the Gospel and nurturing believers in their faith journey.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/gvfmi" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/gvfmi" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/gvfmi" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/gvfmi" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/233552061090" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="ministries.html">Ministries</a>
+                    <a href="events.html">Events</a>
+                    <a href="give.html">Give</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Fetteh Mamfam, Kasoa, Ghana</p>
+                    <p><i class="fas fa-phone-alt"></i> +233 552 061 090</p>
+                    <p><i class="fas fa-envelope"></i> greatvictoryforwardministryint@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Service Times: Sun 7:20AM, Fri 6:30PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Great Victory Forward Ministry International. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.info-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initialize animation
+        window.addEventListener('load', () => {
+            const infoCards = document.querySelectorAll('.info-card');
+            infoCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s;
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    </script>
 </body>
 </html>

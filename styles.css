@@ -271,7 +271,7 @@ ul {
     height: 100vh;
     min-height: 700px;
     background: linear-gradient(rgba(45, 52, 54, 0.8), rgba(45, 52, 54, 0.8)), 
-                url('images/hero-bg.jpg') center/cover no-repeat;
+                url('todd.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -304,7 +304,7 @@ ul {
     font-size: 4rem;
     margin-bottom: 25px;
     line-height: 1.2;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 5px rgba(247, 212, 17, 0.3);
     animation: fadeInDown 1s ease;
 }
 
