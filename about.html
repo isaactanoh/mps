@@ -3,149 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - GVFMI</title>
-    <meta name="description" content="Learn about Great Victory Forward Ministry International - Our vision, mission, and leadership">
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>About Us | Becky's Cleaning Service</title>
+    <meta name="description" content="Learn about Becky's Cleaning Service - our mission, values, and commitment to providing exceptional cleaning services.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* About Page Specific Styles */
-        .about-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(5, 5, 5, 0.8), rgba(31, 30, 29, 0.8)), 
-                        url('flag.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            position: relative;
-            margin-top: 80px;
-        }
-        
-        .about-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 20px;
-        }
-        
-        .about-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(255, 190, 10, 0.918);
-        }
-        
-        .verse {
-            font-style: italic;
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .beliefs-section {
-            background: var(--white);
-        }
-        
-        .belief-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .belief-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: var(--transition);
-            border-top: 4px solid var(--gradient-primary);
-        }
-        
-        .belief-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .belief-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .belief-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-        }
-        
-        .leadership-section {
-            background: var(--light);
-        }
-        
-        .leader-profile {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            align-items: center;
-            max-width: 1000px;
-            margin: 40px auto 0;
-        }
-        
-        .leader-img {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: var(--shadow-hover);
-            margin: 0 auto;
-        }
-        
-        .leader-details {
-            text-align: left;
-        }
-        
-        .leader-details h3 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-        
-        .title {
-            color: var(--primary);
-            font-weight: bold;
-            margin: 15px 0;
-            font-size: 1.2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .about-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .leader-details {
-                text-align: center;
-            }
-            
-            .belief-card {
-                padding: 30px 20px;
-            }
-        }
-    </style>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
+    <!-- Header -->
     <header id="header">
         <div class="container">
             <div class="header-inner">
                 <div class="logo-container">
-                    <img src="church logo.jpg" alt="GVFMI Logo" class="logo-img">
-                    <div class="logo-text">Great Victory <span>Forward</span></div>
+                    <img src="bb.jpg" alt="Becky's Cleaning Service Logo" class="logo-img">
+                    <div class="logo-text">Becky's <span>Cleaning</span></div>
                 </div>
                 
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
@@ -155,89 +27,150 @@
                 <nav>
                     <ul class="nav-menu" id="navMenu">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html" class="active">About</a></li>
-                        <li><a href="ministries.html">Ministries</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="give.html">Give</a></li>
+                        <li><a href="about.html" class="active">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="tel:0542977602" class="btn btn-call"><i class="fas fa-phone"></i> Call Now</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="about-hero">
-        <div class="about-hero-content">
-            <h1>Our Story of Faith</h1>
-            <p class="verse">"Therefore, if anyone is in Christ, he is a new creation" <br>— 2 Corinthians 5:17</p>
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: linear-gradient(rgba(0, 105, 148, 0.7), rgba(0, 105, 148, 0.7)), url('');">
+        <div class="container">
+            <h1>About Becky's Cleaning Service</h1>
+            <p>Your trusted partner for all cleaning needs</p>
         </div>
     </section>
 
-    <!-- ===== BELIEFS SECTION ===== -->
-    <section class="section beliefs-section">
+    <!-- Our Story -->
+    <section class="section">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-image">
+                    <img src="leader.jpg" alt="Becky, the owner" class="rounded-img shadow">
+                </div>
+                <div class="split-content">
+                    <h2>Our Story</h2>
+                    <p>Becky's Cleaning Service was founded in 2018 with a simple mission: to provide exceptional cleaning services that make a real difference in people's lives. What started as a one-woman operation has grown into a trusted team of cleaning professionals serving homes and businesses throughout the area.</p>
+                    
+                    <p>Becky, our founder, began her cleaning career while working part-time to support her education. She quickly realized her passion for transforming spaces and creating clean, healthy environments for families and businesses. Her attention to detail and commitment to customer satisfaction became the foundation of our company.</p>
+                    
+                    <p>Today, we're proud to have expanded our team while maintaining the personal touch and high standards that set us apart from the beginning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="section bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Our Core Beliefs</h2>
-                <p>What we stand for and believe in</p>
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do</p>
             </div>
             
-            <div class="belief-cards">
-                <div class="belief-card">
-                    <div class="belief-icon"><i class="fas fa-cross"></i></div>
-                    <h3>Our Vision</h3>
-                    <p>We exist to connect people to Jesus Christ, and to see people saved, healed, set free, discipled, equipped, empowered and serving.</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Quality</h3>
+                    <p>We don't cut corners. Every cleaning is performed to the highest standards with attention to detail.</p>
                 </div>
                 
-                <div class="belief-card">
-                    <div class="belief-icon"><i class="fas fa-dove"></i></div>
-                    <h3>Our Mission</h3>
-                    <p>Our mission is to lead people to become fully devoted followers of Christ, help people find God, grow their faith, discover their purpose and make a difference.</p>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Care</h3>
+                    <p>We treat your home or business with respect, just as we would our own spaces.</p>
                 </div>
                 
-                <div class="belief-card">
-                    <div class="belief-icon"><i class="fas fa-bible"></i></div>
-                    <h3>Our Creed</h3>
-                    <p>I believe in one God, the father almighty, maker of heaven and earth, of all that is seen and unseen. I believe and trust in Jesus christ, our redeemer who saves us from sin and isolation to be joined together as children of God.</p>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Eco-Friendly</h3>
+                    <p>We use environmentally safe products that are effective yet gentle on your family and pets.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Trust</h3>
+                    <p>All our team members are thoroughly vetted, trained, and insured for your peace of mind.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Reliability</h3>
+                    <p>We show up on time, every time, and deliver consistent results you can count on.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-smile"></i></div>
+                    <h3>Satisfaction</h3>
+                    <p>Your happiness is our priority. If you're not satisfied, we'll make it right.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== LEADERSHIP SECTION ===== -->
-    <section class="section leadership-section">
+    <!-- Our Team -->
+    <section class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Meet Our Leader</h2>
-                <p>Guided by God's wisdom and direction</p>
+                <h2>Meet Our Team</h2>
+                <p>The dedicated professionals behind Becky's Cleaning Service</p>
             </div>
             
-            <div class="leader-profile">
-                <div>
-                    <img src="pastor.jpg" alt="Apostle Enoch Ocansey" class="leader-img">
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="images/team1.jpg" alt="Becky - Founder">
+                    <h3>Becky</h3>
+                    <span>Founder & Lead Cleaner</span>
+                    <p>With over 8 years of experience, Becky ensures every client receives exceptional service.</p>
                 </div>
-                <div class="leader-details">
-                    <h3>Apostle Enoch Ocansey</h3>
-                    <p class="title">General Overseer</p>
-                    <p>With over 20 years of ministry experience, Apostle Ocansey has dedicated his life to spreading the Gospel and nurturing believers. His dynamic teaching and prophetic ministry have touched countless lives across Ghana and beyond.</p>
-                    <p>Apostle Ocansey is passionate about seeing people transformed by the power of God's Word and walking in their divine purpose.</p>
+                
+                <div class="team-card">
+                    <img src="images/team2.jpg" alt="Ama - Cleaning Specialist">
+                    <h3>Ama</h3>
+                    <span>Cleaning Specialist</span>
+                    <p>Ama brings meticulous attention to detail to every cleaning project she undertakes.</p>
+                </div>
+                
+                <div class="team-card">
+                    <img src="images/team3.jpg" alt="Kofi - Operations Manager">
+                    <h3>Kofi</h3>
+                    <span>Operations Manager</span>
+                    <p>Kofi coordinates our team and ensures every job meets our high standards.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Experience the Becky's Difference</h2>
+            <p>Ready to enjoy a cleaner, healthier space? Contact us today to schedule your service.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn">Get a Free Quote</a>
+                <a href="tel:0542977602" class="btn btn-outline"><i class="fas fa-phone"></i> Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>About Us</h3>
-                    <p>Great Victory Forward Ministry International is committed to spreading the Gospel and nurturing believers in their faith journey.</p>
+                    <h3>Becky's Cleaning Service</h3>
+                    <p>Providing exceptional cleaning services with eco-friendly products and trained professionals.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/1EFfg3qLLZ/?mibextid=qi2Omg" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@great.victory.for?_t=ZM-8vt9brV9bZm&_r=1" target="_blank" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://youtube.com/gvfmi" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/233552061090" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/233542977602" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/becks_cleaningservices" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@beckscleaning_services" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="mailto:thebeckscleaningservices@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
@@ -245,58 +178,57 @@
                     <h3>Quick Links</h3>
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
-                    <a href="ministries.html">Ministries</a>
-                    <a href="events.html">Events</a>
-                    <a href="give.html">Give</a>
+                    <a href="services.html">Services</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="faq.html">FAQ</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 
                 <div class="footer-column">
+                    <h3>Services</h3>
+                    <a href="services.html#residential">Residential Cleaning</a>
+                    <a href="services.html#commercial">Commercial Cleaning</a>
+                    <a href="services.html#deep">Deep Cleaning</a>
+                    <a href="services.html#move">Move In/Out Cleaning</a>
+                    <a href="services.html#special">Specialty Cleaning</a>
+                </div>
+                
+                <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Fetteh Mamfam, Kasoa, Ghana</p>
-                    <p><i class="fas fa-phone-alt"></i> +233 552 061 090</p>
-                    <p><i class="fas fa-envelope"></i> greatvictoryforwardministryint@gmail.com</p>
-                    <p><i class="fas fa-clock"></i> Service Times: Sun 7:20AM, Fri 6:30PM</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:0542977602">054 297 7602</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:thebeckscleaningservices@gmail.com">thebeckscleaningservices@gmail.com</a></p>
+                    <p><i class="fas fa-clock"></i> Mon-Sun: 7:00 AM - 8:00 PM</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2024 Great Victory Forward Ministry International. All Rights Reserved.</p>
+                <p>&copy; <span id="year"></span> Becky's Cleaning Service. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ===== SCRIPTS ===== -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-            mobileMenuBtn.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('#navMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        });
-    </script>
+    <!-- Chat Bot Button -->
+    <div class="chat-bot-btn" id="chatBotBtn">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <!-- Chat Bot Container -->
+    <div class="chat-bot-container" id="chatBotContainer">
+        <div class="chat-header">
+            <h4>Becky's Cleaning Help</h4>
+            <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="bot-message">
+                <p>Hello! 👋 I'm Becky, your cleaning assistant. How can I help you today?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
