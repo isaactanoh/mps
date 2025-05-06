@@ -103,11 +103,11 @@ function getBotResponse(message) {
     if (msg.includes('hello') || msg.includes('hi')) {
         return "Hello! How can I help you today?";
     } else if (msg.includes('price') || msg.includes('cost')) {
-        return "Our residential cleaning starts from ₵200. Would you like a custom quote?";
+        return "Our residential cleaning depends on the workload. Please call us for more information";
     } else if (msg.includes('schedule')) {
         return "Call us at 054 297 7602 or book online!";
     } else {
-        return "I’m sorry, I didn’t understand. Please call us for assistance.";
+        return "I'm sorry, I didn't understand. Please call us for assistance.";
     }
 }
 
@@ -153,4 +153,32 @@ window.addEventListener('load', () => {
     });
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on load
+});
+
+// Lightbox functionality
+function openLightbox(imgSrc) {
+    const lightbox = document.querySelector('.lightbox');
+    const img = lightbox.querySelector('img');
+    img.src = imgSrc;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.querySelector('.lightbox').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close when clicking outside image
+document.querySelector('.lightbox')?.addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+});
+
+// Initialize service image click handlers
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.service-thumbnail').forEach(img => {
+        img.addEventListener('click', function() {
+            openLightbox(this.src);
+        });
+    });
 });
