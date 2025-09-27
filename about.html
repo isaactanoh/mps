@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Becks Cleaning Service</title>
-    <meta name="description" content="Learn about Becky's Cleaning Service - our mission, values, and commitment to providing exceptional cleaning services.">
+    <title>About Us | MPS Cleaning Services</title>
+    <meta name="description" content="Learn about MPS Cleaning Services - our mission, values, and commitment to providing exceptional cleaning services.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Header -->
@@ -16,132 +26,154 @@
         <div class="container">
             <div class="header-inner">
                 <div class="logo-container">
-                    <img src="bb.jpg" alt="Beckys Cleaning Service Logo" class="logo-img">
-                    <div class="logo-text">Becks <span>Cleaning</span></div>
+                    <div class="logo-img">
+                        <i class="fas fa-sparkles" style="font-size: 2rem; color: var(--primary);"></i>
+                    </div>
+                    <a href="index.html" class="logo-text">MPS <span>Cleaning</span></a>
                 </div>
                 
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <nav>
-                    <ul class="nav-menu" id="navMenu">
+                <nav class="nav">
+                    <ul class="nav-menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html" class="active">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="tel:0542977602" class="btn btn-call"><i class="fas fa-phone"></i> Call Now</a></li>
+                        <li><a href="tel:0550248068" class="btn-call"><i class="fas fa-phone"></i> Call Now</a></li>
+                        <li><a href="contact.html" class="btn-book">Book Now</a></li>
                     </ul>
                 </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="mobile-menu-overlay"></div>
             </div>
         </div>
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero" style="background-image: linear-gradient(rgba(0, 105, 148, 0.7), rgba(0, 105, 148, 0.7)), url('images/about-hero.jpg');">
+    <section class="page-hero">
         <div class="container">
-            <h2>About Becks Cleaning Service</h2>
-            <p>Your trusted partner for all cleaning needs</p>
+            <h1>About MPS Cleaning Services</h1>
+            <p>Learn more about our company, mission, and the team behind your sparkling clean spaces</p>
         </div>
     </section>
 
-    <!-- Our Story -->
+    <!-- About Section -->
     <section class="section">
         <div class="container">
             <div class="split-section">
-                <div class="split-image">
-                    <img src="leader.jpg" alt="Becky, the owner" class="rounded-img shadow">
-                </div>
                 <div class="split-content">
                     <h2>Our Story</h2>
-                    <p>Becks Cleaning Service was founded in 2018 with a simple mission: to provide exceptional cleaning services that make a real difference in people's lives. What started as a one-woman operation has grown into a trusted team of cleaning professionals serving homes and businesses throughout the area.</p>
-                    
-                    <p>Miss. Rebecca, our founder, began her cleaning career while working part-time to support her education. She quickly realized her passion for transforming spaces and creating clean, healthy environments for families and businesses. Her attention to detail and commitment to customer satisfaction became the foundation of our company.</p>
-                    
-                    <p>Today, we're proud to have expanded our team while maintaining the personal touch and high standards that set us apart from the beginning.</p>
+                    <p>Founded with a passion for creating clean, healthy environments, MPS Cleaning Services has been serving residential and commercial clients for over a decade. What started as a small local business has grown into a trusted name in professional cleaning services.</p>
+                    <p>Our journey began when our founder recognized the need for reliable, thorough cleaning services that customers could count on. With a commitment to excellence and attention to detail, we've built a reputation for quality that keeps our clients coming back.</p>
+                    <p>Today, we continue to uphold the same values that guided us from the beginning: integrity, professionalism, and a genuine care for our clients' satisfaction.</p>
+                </div>
+                
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our cleaning team" class="rounded-img shadow">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Values -->
+    <!-- Mission & Values Section -->
     <section class="section bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Our Values</h2>
-                <p>The principles that guide everything we do</p>
+                <h2>Our Mission & Values</h2>
+                <p>What drives us to deliver exceptional cleaning services every day</p>
             </div>
             
             <div class="values-grid">
                 <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-medal"></i></div>
-                    <h3>Quality</h3>
-                    <p>We don't cut corners. Every cleaning is performed to the highest standards with attention to detail.</p>
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide exceptional cleaning services that enhance our clients' quality of life by creating healthier, more comfortable environments.</p>
                 </div>
                 
                 <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-heart"></i></div>
-                    <h3>Care</h3>
-                    <p>We treat your home or business with respect, just as we would our own spaces.</p>
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading cleaning service provider known for reliability, attention to detail, and outstanding customer care.</p>
                 </div>
                 
                 <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-leaf"></i></div>
-                    <h3>Eco-Friendly</h3>
-                    <p>We use environmentally safe products that are effective yet gentle on your family and pets.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-user-shield"></i></div>
-                    <h3>Trust</h3>
-                    <p>All our team members are thoroughly vetted, trained, and insured for your peace of mind.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Reliability</h3>
-                    <p>We show up on time, every time, and deliver consistent results you can count on.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-smile"></i></div>
-                    <h3>Satisfaction</h3>
-                    <p>Your happiness is our priority. If you're not satisfied, we'll make it right.</p>
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>Integrity, professionalism, excellence, and environmental responsibility guide every aspect of our business.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Team -->
+    <!-- Team Section -->
     <section class="section">
         <div class="container">
             <div class="section-title">
                 <h2>Meet Our Team</h2>
-                <p>The dedicated professionals behind Becky's Cleaning Service</p>
+                <p>The dedicated professionals who make MPS Cleaning Services exceptional</p>
             </div>
             
             <div class="team-grid">
                 <div class="team-card">
-                    <img src="images/team1.jpg" alt="Becky - Founder">
-                    <h3>Miss. Rebecca</h3>
-                    <span>Founder & Lead Cleaner</span>
-                    <p>With over 8 years of experience, Becky ensures every client receives exceptional service.</p>
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Johnson">
+                    <h3>Sarah Johnson</h3>
+                    <span>Founder & CEO</span>
+                    <p>With over 15 years in the cleaning industry, Sarah founded MPS with a vision to provide reliable, high-quality cleaning services.</p>
                 </div>
                 
                 <div class="team-card">
-                    <img src="images/team2.jpg" alt="Ama - Cleaning Specialist">
-                    <h3>Ama</h3>
-                    <span>Cleaning Specialist</span>
-                    <p>Ama brings meticulous attention to detail to every cleaning project she undertakes.</p>
-                </div>
-                
-                <div class="team-card">
-                    <img src="images/team3.jpg" alt="Kofi - Operations Manager">
-                    <h3>Kofi</h3>
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael Rodriguez">
+                    <h3>Michael Rodriguez</h3>
                     <span>Operations Manager</span>
-                    <p>Kofi coordinates our team and ensures every job meets our high standards.</p>
+                    <p>Michael ensures every cleaning project meets our high standards and coordinates our team of cleaning specialists.</p>
+                </div>
+                
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="Emily Chen">
+                    <h3>Emily Chen</h3>
+                    <span>Customer Relations</span>
+                    <p>Emily is your primary point of contact, dedicated to ensuring your complete satisfaction with our services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose MPS Cleaning Services?</h2>
+                <p>Discover what sets us apart from other cleaning companies</p>
+            </div>
+            
+            <div class="split-section reverse">
+                <div class="split-content">
+                    <h3>Experience & Expertise</h3>
+                    <p>With over 10 years in the industry, we've perfected our cleaning techniques and processes to deliver exceptional results consistently.</p>
+                    
+                    <h3>Trained Professionals</h3>
+                    <p>Our team undergoes rigorous training and background checks to ensure they meet our high standards for quality and professionalism.</p>
+                    
+                    <h3>Eco-Friendly Approach</h3>
+                    <p>We prioritize the health of your family and our planet by using environmentally safe cleaning products and methods.</p>
+                    
+                    <h3>Customized Solutions</h3>
+                    <p>We understand that every space is unique, which is why we create customized cleaning plans tailored to your specific needs.</p>
+                    
+                    <a href="contact.html" class="btn">Get Your Custom Quote</a>
+                </div>
+                
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional cleaning" class="rounded-img shadow">
                 </div>
             </div>
         </div>
@@ -150,11 +182,11 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Experience the Becks Difference</h2>
-            <p>Ready to enjoy a cleaner, healthier space? Contact us today to schedule your service.</p>
+            <h2>Experience the MPS Difference</h2>
+            <p>Join thousands of satisfied customers who trust us with their cleaning needs</p>
             <div class="cta-buttons">
-                <a href="contact.html" class="btn">Get a Free Quote</a>
-                <a href="tel:0542977602" class="btn btn-outline"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="contact.html" class="btn btn-accent">Book Your Cleaning</a>
+                <a href="tel:0550248068" class="btn btn-outline"><i class="fas fa-phone"></i> Call Now: 0550248068</a>
             </div>
         </div>
     </section>
@@ -164,13 +196,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Becks Cleaning Service</h3>
-                    <p>Providing exceptional cleaning services with eco-friendly products and trained professionals.</p>
+                    <h3>MPS Cleaning Services</h3>
+                    <p>Providing professional cleaning services with a commitment to excellence and customer satisfaction.</p>
                     <div class="social-links">
-                         <a href="https://wa.me/233542977602" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/becks_cleaningservices?igsh=MXY0cXpoZDkyYmdwcA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@beckscleaning_services?_t=ZM-8xHzyZ2jIak&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thebeckscleaningservices@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/0550248068" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/mps_cleaningservices" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@mps_cleaningservices" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="mailto:mpsparklecleaningservice@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
@@ -179,56 +211,53 @@
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
                     <a href="services.html">Services</a>
-                    <a href="testimonials.html">Testimonials</a>
-                    <a href="faq.html">FAQ</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Services</h3>
+                    <h3>Our Services</h3>
                     <a href="services.html#residential">Residential Cleaning</a>
                     <a href="services.html#commercial">Commercial Cleaning</a>
+                    <a href="services.html#carpet">Carpet Cleaning</a>
                     <a href="services.html#deep">Deep Cleaning</a>
-                    <a href="services.html#move">Move In/Out Cleaning</a>
-                    <a href="services.html#special">Specialty Cleaning</a>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:0542977602">054 297 7602</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:thebeckscleaningservices@gmail.com">thebeckscleaningservices@gmail.com</a></p>
-                    <p><i class="fas fa-clock"></i> Mon-Sun: 7:00 AM - 8:00 PM</p>
+                    <p><i class="fas fa-phone"></i> 0550248068</p>
+                    <p><i class="fas fa-envelope"></i> mpsparklecleaningservice@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Serving the local area</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; <span id="year"></span> Becks Cleaning Service. All Rights Reserved.</p>
+                <p>&copy; 2023 MPS Cleaning Services. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Chat Bot Button -->
-    <div class="chat-bot-btn" id="chatBotBtn">
-        <i class="fas fa-comment-dots"></i>
+    <!-- Chat Bot -->
+    <div class="chat-bot-btn">
+        <i class="fas fa-comments"></i>
     </div>
-
-    <!-- Chat Bot Container -->
-    <div class="chat-bot-container" id="chatBotContainer">
+    
+    <div class="chat-bot-container">
         <div class="chat-header">
-            <h4>Becks Cleaning Help</h4>
-            <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
+            <h4>MPS Cleaning Assistant</h4>
+            <button class="close-chat"><i class="fas fa-times"></i></button>
         </div>
-        <div class="chat-messages" id="chatMessages">
+        <div class="chat-messages">
             <div class="bot-message">
-                <p>Hello! 👋 I'm Becky, your cleaning assistant. How can I help you today?</p>
+                Hi there! How can I help you today?
             </div>
         </div>
         <div class="chat-input">
-            <input type="text" id="userInput" placeholder="Type your message...">
-            <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+            <input type="text" placeholder="Type your message...">
+            <button><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>

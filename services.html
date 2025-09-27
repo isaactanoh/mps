@@ -3,64 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Becks Cleaning Service</title>
-    <meta name="description" content="Explore our comprehensive cleaning services for homes and businesses. Residential, commercial, deep cleaning and more.">
+    <title>Our Services | MPS Cleaning Services</title>
+    <meta name="description" content="Explore our comprehensive range of cleaning services including residential, commercial, carpet, and deep cleaning.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <style>
-        /* Service Section Layout */
-        .service-section {
-            margin-bottom: 80px;
-        }
-        
-        .service-flex-container {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-            margin-top: 20px;
-        }
-        
-        .service-content {
-            flex: 1;
-        }
-        
-        .service-image-wrapper {
-            flex: 1;
-        }
-        
-        .service-thumbnail {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .service-thumbnail:hover {
-            transform: scale(1.02);
-        }
-        
-        /* Mobile Layout */
-        @media (max-width: 768px) {
-            .service-flex-container {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .service-image-wrapper {
-                order: -1;
-                width: 100%;
-            }
-            
-            .service-thumbnail {
-                height: 250px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -68,207 +26,219 @@
         <div class="container">
             <div class="header-inner">
                 <div class="logo-container">
-                    <img src="bb.jpg" alt="Becky's Cleaning Service Logo" class="logo-img">
-                    <div class="logo-text">Becks <span>Cleaning</span></div>
+                    <div class="logo-img">
+                        <i class="fas fa-sparkles" style="font-size: 2rem; color: var(--primary);"></i>
+                    </div>
+                    <a href="index.html" class="logo-text">MPS <span>Cleaning</span></a>
                 </div>
                 
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <nav>
-                    <ul class="nav-menu" id="navMenu">
+                <nav class="nav">
+                    <ul class="nav-menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html" class="active">Services</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="tel:0542977602" class="btn btn-call"><i class="fas fa-phone"></i> Call Now</a></li>
+                        <li><a href="tel:0550248068" class="btn-call"><i class="fas fa-phone"></i> Call Now</a></li>
+                        <li><a href="contact.html" class="btn-book">Book Now</a></li>
                     </ul>
                 </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="mobile-menu-overlay"></div>
             </div>
         </div>
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero" style="background-image: linear-gradient(rgba(0, 105, 148, 0.7), rgba(0, 105, 148, 0.7)), url('images/services-hero.jpg');">
+    <section class="page-hero">
         <div class="container">
-            <h2>Our Cleaning Services</h2>
-            <p>Tailored solutions for every cleaning need</p>
+            <h1>Our Cleaning Services</h1>
+            <p>Comprehensive cleaning solutions for your home or business</p>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Residential Cleaning -->
+    <section class="section" id="residential">
+        <div class="container">
+            <div class="service-details">
+                <div class="service-detail-content">
+                    <h2>Residential Cleaning</h2>
+                    <p>Our residential cleaning services are designed to give you back your valuable time while ensuring your home is always fresh, clean, and inviting.</p>
+                    
+                    <h3>What's Included:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Comprehensive cleaning of all living areas</li>
+                        <li><i class="fas fa-check"></i> Kitchen deep cleaning (appliances, countertops, sinks)</li>
+                        <li><i class="fas fa-check"></i> Bathroom sanitization (toilets, showers, vanities)</li>
+                        <li><i class="fas fa-check"></i> Dusting of all surfaces including furniture and fixtures</li>
+                        <li><i class="fas fa-check"></i> Vacuuming and mopping of all floors</li>
+                        <li><i class="fas fa-check"></i> Window sills and baseboard cleaning</li>
+                        <li><i class="fas fa-check"></i> Trash removal and replacement of liners</li>
+                    </ul>
+                    
+                    <div class="pricing-info">
+                        <h3>Pricing</h3>
+                        <p>Starting from $120 for a standard 3-bedroom home. Contact us for a customized quote based on your specific needs.</p>
+                    </div>
+                    
+                    <a href="contact.html" class="btn">Get a Free Quote</a>
+                </div>
+                
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Residential cleaning" class="rounded-img shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Cleaning -->
+    <section class="section bg-light" id="commercial">
+        <div class="container">
+            <div class="service-details">
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Commercial cleaning" class="rounded-img shadow">
+                </div>
+                
+                <div class="service-detail-content">
+                    <h2>Commercial Cleaning</h2>
+                    <p>Create a positive impression on clients and employees with our professional commercial cleaning services tailored to your business needs.</p>
+                    
+                    <h3>What's Included:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Office space cleaning (desks, common areas)</li>
+                        <li><i class="fas fa-check"></i> Restroom sanitization and restocking</li>
+                        <li><i class="fas fa-check"></i> Kitchen/breakroom cleaning</li>
+                        <li><i class="fas fa-check"></i> Floor care (vacuuming, mopping, polishing)</li>
+                        <li><i class="fas fa-check"></i> Window and glass surface cleaning</li>
+                        <li><i class="fas fa-check"></i> High-touch surface disinfection</li>
+                        <li><i class="fas fa-check"></i> Trash and recycling removal</li>
+                    </ul>
+                    
+                    <div class="pricing-info">
+                        <h3>Pricing</h3>
+                        <p>Customized pricing based on square footage, frequency, and specific requirements. Contact us for a detailed commercial cleaning quote.</p>
+                    </div>
+                    
+                    <a href="contact.html" class="btn">Get a Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carpet & Upholstery -->
+    <section class="section" id="carpet">
+        <div class="container">
+            <div class="service-details">
+                <div class="service-detail-content">
+                    <h2>Carpet & Upholstery Cleaning</h2>
+                    <p>Restore the beauty and extend the life of your carpets, rugs, and furniture with our professional deep cleaning services.</p>
+                    
+                    <h3>What's Included:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Deep steam cleaning for carpets and rugs</li>
+                        <li><i class="fas fa-check"></i> Upholstery cleaning for sofas, chairs, and more</li>
+                        <li><i class="fas fa-check"></i> Stain removal and treatment</li>
+                        <li><i class="fas fa-check"></i> Deodorizing to eliminate odors</li>
+                        <li><i class="fas fa-check"></i> Pre-treatment of high-traffic areas</li>
+                        <li><i class="fas fa-check"></i> Eco-friendly cleaning solutions</li>
+                        <li><i class="fas fa-check"></i> Quick drying technology</li>
+                    </ul>
+                    
+                    <div class="pricing-info">
+                        <h3>Pricing</h3>
+                        <p>Starting from $75 per room. Final pricing depends on carpet condition, size, and specific requirements.</p>
+                    </div>
+                    
+                    <a href="contact.html" class="btn">Get a Free Quote</a>
+                </div>
+                
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Carpet cleaning" class="rounded-img shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Cleaning -->
+    <section class="section bg-light" id="deep">
+        <div class="container">
+            <div class="service-details">
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1563191799-7fef8c61dce6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Deep cleaning" class="rounded-img shadow">
+                </div>
+                
+                <div class="service-detail-content">
+                    <h2>Deep Cleaning Service</h2>
+                    <p>Our comprehensive deep cleaning service tackles areas often overlooked in regular cleaning, giving your space a thorough refresh.</p>
+                    
+                    <h3>What's Included:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Inside cabinet and appliance cleaning</li>
+                        <li><i class="fas fa-check"></i> Detailed baseboard and molding cleaning</li>
+                        <li><i class="fas fa-check"></i> Light fixture and ceiling fan dusting</li>
+                        <li><i class="fas fa-check"></i> Window track and sill cleaning</li>
+                        <li><i class="fas fa-check"></i> Interior window cleaning</li>
+                        <li><i class="fas fa-check"></i> Wall spot cleaning and dusting</li>
+                        <li><i class="fas fa-check"></i> Behind and under furniture cleaning</li>
+                    </ul>
+                    
+                    <div class="pricing-info">
+                        <h3>Pricing</h3>
+                        <p>Starting from $200 depending on the size of your space and level of detail required. Perfect for spring cleaning or post-renovation cleanup.</p>
+                    </div>
+                    
+                    <a href="contact.html" class="btn">Get a Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Addon Services -->
     <section class="section">
         <div class="container">
-            <!-- Residential Cleaning -->
-            <div class="service-section" id="residential">
-                <h2>Residential Cleaning</h2>
-                
-                <div class="service-flex-container">
-                    <div class="service-content">
-                        <p>Our Residential cleaning services are designed to give you back your time while ensuring your home is spotless, fresh, and healthy. We customize each cleaning to your specific needs and preferences.</p>
-                        
-                        <h3>What's Included:</h3>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Dusting of all surfaces, furniture, and decor</li>
-                            <li><i class="fas fa-check"></i> Vacuuming and mopping all floors</li>
-                            <li><i class="fas fa-check"></i> Kitchen cleaning (appliances, countertops, sinks)</li>
-                            <li><i class="fas fa-check"></i> Bathroom sanitization (toilets, showers, sinks, mirrors)</li>
-                        </ul>
-                        
-                        <div class="pricing-info">
-                            <h3>Pricing:</h3>
-                            <p>Price varies based on home size and specific requirements</p>
-                            <a href="contact.html" class="btn">Get a Custom Quote</a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-image-wrapper">
-                        <img src="6.jpg" alt="Residential cleaning" 
-                             class="service-thumbnail"
-                             onclick="openLightbox('6.jpg')">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Commercial Cleaning -->
-            <div class="service-section" id="commercial">
-                <h2>Commercial Cleaning</h2>
-                
-                <div class="service-flex-container">
-                    <div class="service-content">
-                        <p>Create a healthier, more productive work environment with our professional commercial cleaning services. We work around your business hours to minimize disruption while maximizing cleanliness.</p>
-                        
-                        <h3>What's Included:</h3>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Daily, weekly, or monthly cleaning schedules</li>
-                            <li><i class="fas fa-check"></i> Office and workspace cleaning</li>
-                            <li><i class="fas fa-check"></i> Restroom sanitization and restocking</li>
-                            <li><i class="fas fa-check"></i> Floor care (vacuuming, mopping, buffing)</li>
-                        </ul>
-                        
-                        <div class="pricing-info">
-                            <h3>Pricing:</h3>
-                            <p>Custom pricing based on square footage, frequency, and specific needs</p>
-                            <a href="contact.html" class="btn">Request a Business Quote</a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-image-wrapper">
-                        <img src="7.jpg" alt="Commercial cleaning" 
-                             class="service-thumbnail"
-                             onclick="openLightbox('7.jpg')">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Deep Cleaning -->
-            <div class="service-section" id="deep">
-                <h2>Deep Cleaning</h2>
-                
-                <div class="service-flex-container">
-                    <div class="service-content">
-                        <p>Our deep cleaning service goes beyond regular cleaning to tackle built-up dirt, grime, and hard-to-reach areas. Perfect for seasonal cleaning, post-construction, or preparing for special occasions.</p>
-                        
-                        <h3>What's Included:</h3>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Detailed cleaning of all standard areas</li>
-                            <li><i class="fas fa-check"></i> Inside appliance cleaning (oven, fridge, microwave)</li>
-                            <li><i class="fas fa-check"></i> Cabinet and drawer fronts</li>
-                            <li><i class="fas fa-check"></i> Grout and tile scrubbing</li>
-                        </ul>
-                        
-                        <div class="pricing-info">
-                            <h3>Pricing:</h3>
-                            <p>Based on home size and condition</p>
-                            <a href="contact.html" class="btn">Schedule a Deep Clean</a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-image-wrapper">
-                        <img src="3.jpg" alt="Deep cleaning" 
-                             class="service-thumbnail"
-                             onclick="openLightbox('3.jpg')">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Specialty Cleaning -->
-            <div class="service-section" id="special">
-                <h2>Specialty Cleaning</h2>
-                
-                <div class="service-flex-container">
-                    <div class="service-content">
-                        <p>We offer specialized cleaning services for unique needs, including post-construction cleaning, event cleanup, and more.</p>
-                        
-                        <h3>Specialty Services:</h3>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Post-construction cleanup</li>
-                            <li><i class="fas fa-check"></i> Carpet cleaning</li>
-                            <li><i class="fas fa-check"></i> Window washing</li>
-                            <li><i class="fas fa-check"></i> Pressure washing (exterior)</li>
-                        </ul>
-                        
-                        <div class="pricing-info">
-                            <h3>Pricing:</h3>
-                            <p>Varies by service - contact us for details</p>
-                            <a href="contact.html" class="btn">Inquire About Specialty Services</a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-image-wrapper">
-                        <img src="5.jpg" alt="Specialty cleaning" 
-                             class="service-thumbnail"
-                             onclick="openLightbox('5.jpg')">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" onclick="closeLightbox()">
-        <img src="" alt="Enlarged view" class="lightbox-content">
-        <span class="lightbox-close">&times;</span>
-    </div>
-
-    <!-- Service Add-ons -->
-    <section class="section bg-light">
-        <div class="container">
             <div class="section-title">
-                <h2>Service Add-ons</h2>
-                <p>Enhance your cleaning service with these optional extras</p>
+                <h2>Additional Services</h2>
+                <p>Enhance your cleaning package with these specialized add-ons</p>
             </div>
             
             <div class="addons-grid">
                 <div class="addon-card">
-                    <div class="addon-icon"><i class="fas fa-tshirt"></i></div>
-                    <h3>Laundry Service</h3>
-                    <p>We'll wash, dry, and fold your laundry during your cleaning appointment.</p>
-                    <span class="addon-price">+₵50</span>
+                    <div class="addon-icon">
+                        <i class="fas fa-window-restore"></i>
+                    </div>
+                    <h3>Window Cleaning</h3>
+                    <p>Interior and exterior window cleaning for crystal-clear views.</p>
+                    <span class="addon-price">From $50</span>
                 </div>
                 
                 <div class="addon-card">
-                    <div class="addon-icon"><i class="fas fa-blender"></i></div>
-                    <h3>Inside Appliances</h3>
-                    <p>Detailed cleaning of fridge, oven, microwave, and other appliances.</p>
-                    <span class="addon-price">+₵40</span>
+                    <div class="addon-icon">
+                        <i class="fas fa-soap"></i>
+                    </div>
+                    <h3>Move-In/Move-Out</h3>
+                    <p>Comprehensive cleaning for tenants or new homeowners.</p>
+                    <span class="addon-price">From $150</span>
                 </div>
                 
                 <div class="addon-card">
-                    <div class="addon-icon"><i class="fas fa-couch"></i></div>
-                    <h3>Upholstery Cleaning</h3>
-                    <p>Professional cleaning for sofas, chairs, and other upholstered furniture.</p>
-                    <span class="addon-price">+₵60</span>
+                    <div class="addon-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <h3>Post-Construction</h3>
+                    <p>Thorough cleanup after remodeling or construction projects.</p>
+                    <span class="addon-price">From $200</span>
                 </div>
                 
                 <div class="addon-card">
-                    <div class="addon-icon"><i class="fas fa-car"></i></div>
-                    <h3>Car Interior</h3>
-                    <p>Thorough cleaning and vacuuming of your vehicle's interior.</p>
-                    <span class="addon-price">+₵80</span>
+                    <div class="addon-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Organization Services</h3>
+                    <p>Help decluttering and organizing your spaces.</p>
+                    <span class="addon-price">From $75</span>
                 </div>
             </div>
         </div>
@@ -277,11 +247,11 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Ready to Experience a Cleaner Space?</h2>
-            <p>Contact us today to schedule your cleaning service or request a free quote.</p>
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Contact us today for a free, no-obligation quote tailored to your specific cleaning needs</p>
             <div class="cta-buttons">
-                <a href="contact.html" class="btn">Get a Free Quote</a>
-                <a href="tel:0542977602" class="btn btn-outline"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="contact.html" class="btn btn-accent">Get Your Free Quote</a>
+                <a href="tel:0550248068" class="btn btn-outline"><i class="fas fa-phone"></i> Call Now: 0550248068</a>
             </div>
         </div>
     </section>
@@ -291,13 +261,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Becks Cleaning Service</h3>
-                    <p>Providing exceptional cleaning services with eco-friendly products and trained professionals.</p>
+                    <h3>MPS Cleaning Services</h3>
+                    <p>Providing professional cleaning services with a commitment to excellence and customer satisfaction.</p>
                     <div class="social-links">
-                         <a href="https://wa.me/233542977602" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/becks_cleaningservices?igsh=MXY0cXpoZDkyYmdwcA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@beckscleaning_services?_t=ZM-8xHzyZ2jIak&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thebeckscleaningservices@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/0550248068" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/mps_cleaningservices" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@mps_cleaningservices" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="mailto:mpsparklecleaningservice@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
@@ -306,56 +276,53 @@
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
                     <a href="services.html">Services</a>
-                    <a href="testimonials.html">Testimonials</a>
-                    <a href="faq.html">FAQ</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Services</h3>
+                    <h3>Our Services</h3>
                     <a href="services.html#residential">Residential Cleaning</a>
                     <a href="services.html#commercial">Commercial Cleaning</a>
+                    <a href="services.html#carpet">Carpet Cleaning</a>
                     <a href="services.html#deep">Deep Cleaning</a>
-                    <a href="services.html#move">Move In/Out Cleaning</a>
-                    <a href="services.html#special">Specialty Cleaning</a>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:0542977602">054 297 7602</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:thebeckscleaningservices@gmail.com">thebeckscleaningservices@gmail.com</a></p>
-                    <p><i class="fas fa-clock"></i> Mon-Sun: 7:00 AM - 8:00 PM</p>
+                    <p><i class="fas fa-phone"></i> 0550248068</p>
+                    <p><i class="fas fa-envelope"></i> mpsparklecleaningservice@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Serving the local area</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; <span id="year"></span> Becks Cleaning Service. All Rights Reserved.</p>
+                <p>&copy; 2023 MPS Cleaning Services. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Chat Bot Button -->
-    <div class="chat-bot-btn" id="chatBotBtn">
-        <i class="fas fa-comment-dots"></i>
+    <!-- Chat Bot -->
+    <div class="chat-bot-btn">
+        <i class="fas fa-comments"></i>
     </div>
-
-    <!-- Chat Bot Container -->
-    <div class="chat-bot-container" id="chatBotContainer">
+    
+    <div class="chat-bot-container">
         <div class="chat-header">
-            <h4>Becky's Cleaning Help</h4>
-            <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
+            <h4>MPS Cleaning Assistant</h4>
+            <button class="close-chat"><i class="fas fa-times"></i></button>
         </div>
-        <div class="chat-messages" id="chatMessages">
+        <div class="chat-messages">
             <div class="bot-message">
-                <p>Hello! 👋 I'm Becky, your cleaning assistant. How can I help you today?</p>
+                Hi there! How can I help you today?
             </div>
         </div>
         <div class="chat-input">
-            <input type="text" id="userInput" placeholder="Type your message...">
-            <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+            <input type="text" placeholder="Type your message...">
+            <button><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>

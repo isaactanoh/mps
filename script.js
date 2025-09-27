@@ -1,184 +1,362 @@
-// Mobile Menu Toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navMenu = document.getElementById('navMenu');
+// MPS Cleaning Services - Main JavaScript File
 
-if (mobileMenuBtn && navMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-        const isActive = navMenu.classList.toggle('active');
-        mobileMenuBtn.setAttribute('aria-expanded', isActive);
-        mobileMenuBtn.innerHTML = isActive ? 
-            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    });
-
-    // Close menu when clicking on links
-    document.querySelectorAll('#navMenu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        });
-    });
-}
-
-// Header Scroll Effect
-window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    if (window.scrollY > 50) {
-        header.classList.add('header-scrolled');
-    } else {
-        header.classList.remove('header-scrolled');
-    }
-});
-
-// Set Current Year in Footer
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// FAQ Accordion
-const faqQuestions = document.querySelectorAll('.faq-question');
-if (faqQuestions) {
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            const isActive = question.classList.contains('active');
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
             
-            // Close all FAQs
-            faqQuestions.forEach(q => {
+            // Change icon based on menu state
+            const icon = this.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+    
+    // Close mobile menu when clicking overlay
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            this.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Reset menu icon
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    }
+    
+    // Header scroll effect
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        }
+    });
+    
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const isActive = this.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-question').forEach(q => {
                 q.classList.remove('active');
-                q.nextElementSibling.style.maxHeight = null;
+                q.nextElementSibling.classList.remove('active');
             });
             
-            // Open clicked FAQ
+            // Open clicked item if it wasn't active
             if (!isActive) {
-                question.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
+                this.classList.add('active');
+                answer.classList.add('active');
             }
         });
     });
-}
-
-// Chat Bot Toggle
-const chatBotBtn = document.getElementById('chatBotBtn');
-const chatBotContainer = document.getElementById('chatBotContainer');
-const closeChat = document.getElementById('closeChat');
-
-if (chatBotBtn && chatBotContainer) {
-    chatBotBtn.addEventListener('click', () => {
-        chatBotContainer.classList.toggle('active');
-    });
-    closeChat.addEventListener('click', () => {
-        chatBotContainer.classList.remove('active');
-    });
-}
-
-// Chat Bot Functionality
-const chatMessages = document.getElementById('chatMessages');
-const userInput = document.getElementById('userInput');
-const sendMessage = document.getElementById('sendMessage');
-
-function sendUserMessage() {
-    const message = userInput.value.trim();
-    if (message) {
-        // Add user message
-        const userMsg = document.createElement('div');
-        userMsg.className = 'user-message';
-        userMsg.textContent = message;
-        chatMessages.appendChild(userMsg);
-
-        // Clear input
-        userInput.value = '';
-
-        // Bot reply after 1 second
-        setTimeout(() => {
-            const botMsg = document.createElement('div');
-            botMsg.className = 'bot-message';
-            botMsg.textContent = getBotResponse(message);
-            chatMessages.appendChild(botMsg);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 1000);
+    
+    // Contact Form Handling
+    const contactForm = document.getElementById('quoteForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            
+            if (!name || !email || !phone || !service) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.classList.add('form-loading');
+            
+            // Simulate API call delay
+            setTimeout(function() {
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('form-loading');
+                
+                // Show success message
+                successMessage.style.display = 'flex';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 2000);
+        });
     }
-}
-
-function getBotResponse(message) {
-    const msg = message.toLowerCase();
-    if (msg.includes('hello') || msg.includes('hi')) {
-        return "Hello! How can I help you today?";
-    } else if (msg.includes('price') || msg.includes('cost')) {
-        return "Our residential cleaning depends on the workload. Please call us for more information";
-    } else if (msg.includes('schedule')) {
-        return "Call us at 054 297 7602 or book online!";
-    } else {
-        return "I'm sorry, I didn't understand. Please call us for assistance.";
+    
+    // Chat Bot Functionality
+    const chatBotBtn = document.querySelector('.chat-bot-btn');
+    const chatBotContainer = document.querySelector('.chat-bot-container');
+    const closeChatBtn = document.querySelector('.close-chat');
+    const chatInput = document.querySelector('.chat-input input');
+    const chatSendBtn = document.querySelector('.chat-input button');
+    const chatMessages = document.querySelector('.chat-messages');
+    
+    if (chatBotBtn) {
+        chatBotBtn.addEventListener('click', function() {
+            chatBotContainer.classList.toggle('active');
+        });
     }
-}
-
-if (sendMessage && userInput) {
-    sendMessage.addEventListener('click', sendUserMessage);
-    userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') sendUserMessage();
-    });
-}
-
-// Contact Form Submission
-const contactForm = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
-
-if (contactForm && formSuccess) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        contactForm.style.display = 'none';
-        formSuccess.style.display = 'block';
-        contactForm.reset();
-    });
-}
-
-// Animate Elements on Scroll
-function animateOnScroll() {
-    const elements = document.querySelectorAll('.info-card, .service-card');
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (elementTop < windowHeight - 100) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }
-    });
-}
-
-window.addEventListener('load', () => {
-    // Initialize animations
-    document.querySelectorAll('.info-card, .service-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease';
-    });
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on load
-});
-
-// Lightbox functionality
-function openLightbox(imgSrc) {
-    const lightbox = document.querySelector('.lightbox');
-    const img = lightbox.querySelector('img');
-    img.src = imgSrc;
-    lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-    document.querySelector('.lightbox').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// Close when clicking outside image
-document.querySelector('.lightbox')?.addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
-});
-
-// Initialize service image click handlers
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.service-thumbnail').forEach(img => {
-        img.addEventListener('click', function() {
-            openLightbox(this.src);
+    
+    if (closeChatBtn) {
+        closeChatBtn.addEventListener('click', function() {
+            chatBotContainer.classList.remove('active');
+        });
+    }
+    
+    // Chat bot responses
+    const botResponses = [
+        "Hi! I'm the MPS Cleaning Assistant. How can I help you today?",
+        "We offer residential, commercial, carpet, and deep cleaning services. Which one are you interested in?",
+        "Our team is available Monday to Sunday from 8 AM to 8 PM. When would you like to schedule a cleaning?",
+        "We provide free, no-obligation quotes. Would you like me to help you request one?",
+        "All our cleaners are background-checked, trained professionals who use eco-friendly products.",
+        "For immediate assistance, you can call us at 0550248068 or send a WhatsApp message to the same number."
+    ];
+    
+    let responseIndex = 0;
+    
+    function addBotMessage(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('bot-message');
+        messageDiv.textContent = message;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function addUserMessage(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('user-message');
+        messageDiv.textContent = message;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    if (chatSendBtn) {
+        chatSendBtn.addEventListener('click', function() {
+            const message = chatInput.value.trim();
+            if (message) {
+                addUserMessage(message);
+                chatInput.value = '';
+                
+                // Simulate typing delay
+                setTimeout(function() {
+                    addBotMessage(botResponses[responseIndex]);
+                    responseIndex = (responseIndex + 1) % botResponses.length;
+                }, 1000);
+            }
+        });
+    }
+    
+    // Allow sending message with Enter key
+    if (chatInput) {
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                chatSendBtn.click();
+            }
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerHeight = document.getElementById('header').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                    
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
         });
     });
+    
+    // Image lazy loading
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    // Add loading animation to images
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+        
+        // Set initial opacity for fade-in effect
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+    });
+    
+    // Service card hover effects
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Testimonial slider functionality
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    
+    function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+            testimonial.style.display = i === index ? 'flex' : 'none';
+        });
+    }
+    
+    // Only initialize if there are multiple testimonials
+    if (testimonials.length > 1) {
+        // Initially show the first testimonial
+        showTestimonial(0);
+        
+        // Auto-rotate testimonials every 5 seconds
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+    }
+    
+    // Add animation on scroll
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.service-card, .value-card, .team-card, .testimonial-card');
+        
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    }
+    
+    // Set initial state for animated elements
+    document.querySelectorAll('.service-card, .value-card, .team-card, .testimonial-card').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+    
+    // Trigger animation on scroll
+    window.addEventListener('scroll', animateOnScroll);
+    // Trigger once on load in case elements are already in view
+    animateOnScroll();
+    
+    // Form input enhancements
+    const formInputs = document.querySelectorAll('.form-control');
+    
+    formInputs.forEach(input => {
+        // Add focus effect
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.parentElement.classList.remove('focused');
+            }
+        });
+        
+        // Check if input has value on page load (for browser autofill)
+        if (input.value !== '') {
+            input.parentElement.classList.add('focused');
+        }
+    });
+    
+    console.log('MPS Cleaning Services website loaded successfully!');
 });
+
+// Additional utility functions
+function debounce(func, wait, immediate) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            timeout = null;
+            if (!immediate) func(...args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func(...args);
+    };
+}
+
+// Export functions for potential use in other scripts
+window.MPS = {
+    debounce: debounce
+};
