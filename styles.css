@@ -345,7 +345,7 @@ ul {
     font-size: 4rem;
     margin-bottom: 25px;
     line-height: 1.2;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 5px rgb(6, 248, 27);
     animation: fadeInDown 1s ease;
 }
 
