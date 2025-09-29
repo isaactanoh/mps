@@ -76,11 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact Form Handling
     const contactForm = document.getElementById('quoteForm');
     const successMessage = document.getElementById('successMessage');
-    
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Simple form validation
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -89,35 +87,50 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (!name || !email || !phone || !service) {
                 alert('Please fill in all required fields.');
+                e.preventDefault();
                 return;
             }
             
-            // Simulate form submission
+            // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.classList.add('form-loading');
+            submitBtn.disabled = true;
             
-            // Simulate API call delay
-            setTimeout(function() {
-                submitBtn.textContent = originalText;
-                submitBtn.classList.remove('form-loading');
-                
-                // Show success message
-                successMessage.style.display = 'flex';
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Hide success message after 5 seconds
-                setTimeout(function() {
-                    successMessage.style.display = 'none';
-                }, 5000);
-            }, 2000);
+            // Form will submit normally to FormSubmit
+        });
+    }
+
+    // Booking Form Handling
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingSuccess = document.getElementById('bookingSuccess');
+
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+            // Simple validation
+            const name = document.getElementById('booking-name').value;
+            const email = document.getElementById('booking-email').value;
+            const phone = document.getElementById('booking-phone').value;
+            const service = document.getElementById('booking-service').value;
+            const date = document.getElementById('booking-date').value;
+            const time = document.getElementById('booking-time').value;
+            const address = document.getElementById('booking-address').value;
+            
+            if (!name || !email || !phone || !service || !date || !time || !address) {
+                alert('Please fill in all required fields.');
+                e.preventDefault();
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
+            submitBtn.disabled = true;
+            
+            // Form will submit normally to FormSubmit
         });
     }
     

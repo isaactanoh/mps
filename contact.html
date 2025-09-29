@@ -34,11 +34,11 @@
                 
                 <nav class="nav">
                     <ul class="nav-menu">
-                      <li><a href="index.html" class="active">Home</a></li>
+                      <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                          <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
                         <li><a href="tel:0550248068" class="btn-call"><i class="fas fa-phone"></i> Call Now</a></li>
                          <li><a href="contact.html#booking" class="btn btn-book">Book Now</a></li>
                     </ul>
@@ -122,48 +122,53 @@
                 
                 <div class="contact-form">
                     <h3>Request a Free Quote</h3>
-                    <form id="quoteForm">
+                    <form id="quoteForm" action="https://formsubmit.co/mpsparklecleaningservice@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Quote Request - MPS Cleaning Services">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="thankyou.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        
                         <div class="form-group">
                             <label for="name">Full Name *</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email Address *</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" class="form-control" required>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="service">Service Interested In *</label>
-                            <select id="service" class="form-control" required>
+                            <select id="service" name="service" class="form-control" required>
                                 <option value="">Select a service</option>
-                                <option value="residential">Residential Cleaning</option>
-                                <option value="commercial">Commercial Cleaning</option>
-                                <option value="carpet">Carpet & Upholstery</option>
-                                <option value="deep">Deep Cleaning</option>
-                                <option value="other">Other</option>
+                                <option value="Residential Cleaning">Residential Cleaning</option>
+                                <option value="Commercial Cleaning">Commercial Cleaning</option>
+                                <option value="Carpet & Upholstery">Carpet & Upholstery</option>
+                                <option value="Deep Cleaning">Deep Cleaning</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="frequency">Cleaning Frequency</label>
-                            <select id="frequency" class="form-control">
+                            <select id="frequency" name="frequency" class="form-control">
                                 <option value="">Select frequency</option>
-                                <option value="one-time">One-Time</option>
-                                <option value="weekly">Weekly</option>
-                                <option value="bi-weekly">Bi-Weekly</option>
-                                <option value="monthly">Monthly</option>
+                                <option value="One-Time">One-Time</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Bi-Weekly">Bi-Weekly</option>
+                                <option value="Monthly">Monthly</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Additional Details</label>
-                            <textarea id="message" class="form-control" placeholder="Tell us about your cleaning needs..."></textarea>
+                            <textarea id="message" name="message" class="form-control" placeholder="Tell us about your cleaning needs..."></textarea>
                         </div>
                         
                         <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
@@ -177,7 +182,8 @@
             </div>
         </div>
     </section>
-      <!-- Booking Section -->
+
+    <!-- Booking Section -->
     <section class="section bg-light" id="booking">
         <div class="container">
             <div class="section-title">
@@ -187,7 +193,7 @@
             
             <div class="contact-form">
                 <form id="bookingForm" action="https://formsubmit.co/mpsparklecleaningservice@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Booking Request - MPS cleaningservices">
+                    <input type="hidden" name="_subject" value="New Booking Request - MPS Cleaning Services">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="thankyou.html">
                     <input type="hidden" name="_captcha" value="false">
@@ -220,7 +226,7 @@
                             <option value="Car detailing">Car detailing</option>
                             <option value="Carpet Cleaning">Carpet Cleaning</option>
                             <option value="Event Cleaning">Event Cleaning</option>
-                            <option value="Facility management">Facility managemen</option>
+                            <option value="Facility management">Facility management</option>
                             <option value="Couch and Mattress Cleaning">Couch and Mattress Cleaning</option>
                         </select>
                     </div>
@@ -234,9 +240,9 @@
                         <label for="booking-time">Preferred Time*</label>
                         <select id="booking-time" name="time" class="form-control" required>
                             <option value="">Select a time</option>
-                            <option value="Morning (7am - 12pm)">Morning (7am - 12pm)</option>
-                            <option value="Afternoon (12pm - 5pm)">Afternoon (12pm - 5pm)</option>
-                            <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
+                            <option value="9:00am - 8:00pm">9:00am - 8:00pm</option>
+                            <option value="12:00pm - 11:00pm">12:00pm - 11:00pm</option>
+                            <option value="9:00am - 6:00pm">9:00am - 6:00pm</option>
                         </select>
                     </div>
                     
