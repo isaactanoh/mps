@@ -62,13 +62,15 @@ document.addEventListener('DOMContentLoaded', function() {
             // Close all other FAQ items
             document.querySelectorAll('.faq-question').forEach(q => {
                 q.classList.remove('active');
-                q.nextElementSibling.classList.remove('active');
+                q.nextElementSibling.style.maxHeight = null;
             });
             
             // Open clicked item if it wasn't active
             if (!isActive) {
                 this.classList.add('active');
-                answer.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            } else {
+                answer.style.maxHeight = null;
             }
         });
     });
@@ -79,15 +81,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
             // Simple form validation
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
             const service = document.getElementById('service').value;
             
-            if (!name || !email || !phone || !service) {
+            if (!name || !email || !phone || !location || !service) {
                 alert('Please fill in all required fields.');
-                e.preventDefault();
                 return;
             }
             
@@ -98,7 +102,10 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Form will submit normally to FormSubmit
+            // Submit the form after validation
+            setTimeout(() => {
+                this.submit();
+            }, 1000);
         });
     }
 
@@ -108,18 +115,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
             // Simple validation
             const name = document.getElementById('booking-name').value;
             const email = document.getElementById('booking-email').value;
             const phone = document.getElementById('booking-phone').value;
+            const location = document.getElementById('booking-location').value;
             const service = document.getElementById('booking-service').value;
             const date = document.getElementById('booking-date').value;
             const time = document.getElementById('booking-time').value;
             const address = document.getElementById('booking-address').value;
             
-            if (!name || !email || !phone || !service || !date || !time || !address) {
+            if (!name || !email || !phone || !location || !service || !date || !time || !address) {
                 alert('Please fill in all required fields.');
-                e.preventDefault();
                 return;
             }
             
@@ -130,7 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
             submitBtn.disabled = true;
             
-            // Form will submit normally to FormSubmit
+            // Submit the form after validation
+            setTimeout(() => {
+                this.submit();
+            }, 1000);
         });
     }
     
@@ -161,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Our team is available Monday to Sunday from 8 AM to 8 PM. When would you like to schedule a cleaning?",
         "We provide free, no-obligation quotes. Would you like me to help you request one?",
         "All our cleaners are background-checked, trained professionals who use eco-friendly products.",
-        "For immediate assistance, you can call us at 0550248068 or send a WhatsApp message to the same number."
+        "For immediate assistance, you can call us at 0530074668 or send a WhatsApp message to the same number."
     ];
     
     let responseIndex = 0;
@@ -350,6 +362,13 @@ document.addEventListener('DOMContentLoaded', function() {
             input.parentElement.classList.add('focused');
         }
     });
+    
+    // Set minimum date for booking form
+    const bookingDate = document.getElementById('booking-date');
+    if (bookingDate) {
+        const today = new Date().toISOString().split('T')[0];
+        bookingDate.setAttribute('min', today);
+    }
     
     console.log('MPS Cleaning Services website loaded successfully!');
 });

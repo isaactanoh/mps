@@ -920,80 +920,6 @@ ul {
     display: block;
     margin-bottom: 15px;
 }
-
-/* ===== TESTIMONIAL GRID ===== */
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-}
-
-.testimonial-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border-left: 4px solid var(--primary);
-}
-
-.testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
-}
-
-.testimonial-content {
-    margin-bottom: 25px;
-    flex-grow: 1;
-}
-
-.rating {
-    color: #f1c40f;
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-}
-
-.testimonial-content p {
-    font-style: italic;
-    position: relative;
-    padding-left: 20px;
-}
-
-.testimonial-content p::before {
-    content: '"';
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 2rem;
-    color: var(--primary);
-    line-height: 1;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-}
-
-.testimonial-author img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-}
-
-.testimonial-author h4 {
-    margin-bottom: 5px;
-}
-
-.testimonial-author span {
-    color: var(--gray);
-    font-size: 0.9rem;
-}
-
 /* Review Platforms */
 .platform-grid {
     display: grid;
@@ -2019,4 +1945,102 @@ select.form-control {
     .service-main-heading {
         font-size: 2rem;
     }
+}
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--primary-light);
+}
+
+.team-card h3 {
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.team-card span {
+    color: var(--primary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.team-card p {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* Form Improvements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.success-message i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
 }
