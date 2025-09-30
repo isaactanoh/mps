@@ -75,76 +75,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Contact Form Handling
-    const contactForm = document.getElementById('quoteForm');
-    const successMessage = document.getElementById('successMessage');
+    // Contact Form Handling - FIXED
+const contactForm = document.getElementById('quoteForm');
+const successMessage = document.getElementById('successMessage');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simple form validation
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const location = document.getElementById('location').value;
-            const service = document.getElementById('service').value;
-            
-            if (!name || !email || !phone || !location || !service) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            // Submit the form after validation
-            setTimeout(() => {
-                this.submit();
-            }, 1000);
-        });
-    }
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        // Simple form validation
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const location = document.getElementById('location').value;
+        const service = document.getElementById('service').value;
+        
+        if (!name || !email || !phone || !location || !service) {
+            e.preventDefault(); // Only prevent if validation fails
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // Show loading state but allow form to submit naturally
+        const submitBtn = this.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Form will submit naturally to FormSubmit - NO e.preventDefault()
+    });
+}
 
-    // Booking Form Handling
-    const bookingForm = document.getElementById('bookingForm');
-    const bookingSuccess = document.getElementById('bookingSuccess');
+// Booking Form Handling - FIXED
+const bookingForm = document.getElementById('bookingForm');
+const bookingSuccess = document.getElementById('bookingSuccess');
 
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simple validation
-            const name = document.getElementById('booking-name').value;
-            const email = document.getElementById('booking-email').value;
-            const phone = document.getElementById('booking-phone').value;
-            const location = document.getElementById('booking-location').value;
-            const service = document.getElementById('booking-service').value;
-            const date = document.getElementById('booking-date').value;
-            const time = document.getElementById('booking-time').value;
-            const address = document.getElementById('booking-address').value;
-            
-            if (!name || !email || !phone || !location || !service || !date || !time || !address) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
-            submitBtn.disabled = true;
-            
-            // Submit the form after validation
-            setTimeout(() => {
-                this.submit();
-            }, 1000);
-        });
-    }
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+        // Simple validation
+        const name = document.getElementById('booking-name').value;
+        const email = document.getElementById('booking-email').value;
+        const phone = document.getElementById('booking-phone').value;
+        const location = document.getElementById('booking-location').value;
+        const service = document.getElementById('booking-service').value;
+        const date = document.getElementById('booking-date').value;
+        const time = document.getElementById('booking-time').value;
+        const address = document.getElementById('booking-address').value;
+        
+        if (!name || !email || !phone || !location || !service || !date || !time || !address) {
+            e.preventDefault(); // Only prevent if validation fails
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // Show loading state but allow form to submit naturally
+        const submitBtn = this.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
+        submitBtn.disabled = true;
+        
+        // Form will submit naturally to FormSubmit - NO e.preventDefault()
+    });
+}
     
     // Chat Bot Functionality
     const chatBotBtn = document.querySelector('.chat-bot-btn');
