@@ -75,9 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Contact Form Handling - FIXED
+    // Contact Form Handling - FIXED WITH REDIRECT
     const contactForm = document.getElementById('quoteForm');
-    const successMessage = document.getElementById('successMessage');
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -94,18 +93,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Show loading state but allow form to submit naturally
+            // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Form will submit naturally to Web3Forms - NO e.preventDefault()
+            // Use JavaScript to submit and handle redirect
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to thank you page after successful submission
+                    window.location.href = 'thankyou.html';
+                } else {
+                    alert('There was an error submitting the form. Please try again.');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            })
+            .catch(error => {
+                alert('There was an error submitting the form. Please try again.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
         });
     }
 
-    // Booking Form Handling - FIXED
+    // Booking Form Handling - FIXED WITH REDIRECT
     const bookingForm = document.getElementById('bookingForm');
-    const bookingSuccess = document.getElementById('bookingSuccess');
 
     if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {
@@ -125,12 +146,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Show loading state but allow form to submit naturally
+            // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
             submitBtn.disabled = true;
             
-            // Form will submit naturally to Web3Forms - NO e.preventDefault()
+            // Use JavaScript to submit and handle redirect
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to thank you page after successful submission
+                    window.location.href = 'thankyou.html';
+                } else {
+                    alert('There was an error submitting the form. Please try again.');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            })
+            .catch(error => {
+                alert('There was an error submitting the form. Please try again.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
         });
     }
     
